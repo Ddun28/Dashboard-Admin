@@ -25,11 +25,6 @@ export const dataToolsSidebar = [
         href: "/faqs", 
     },
     {
-        icon: CircleHelpIcon,
-        label: "Faqs",
-        href: "/faqs", 
-    },
-    {
         icon: BarChart4,
         label: "Analytics",
         href: "/analytics", 
