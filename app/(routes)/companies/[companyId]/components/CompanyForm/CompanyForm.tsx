@@ -38,7 +38,18 @@ export default function CompanyForm(props: CompanyFormProps) {
   })
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log("onSubmit");
+    try {
+      await axios.post(`/api/companies/${company.id}`, values);
+      toast({
+        title: "Company updated successfully",
+      })
+      router.refresh()
+    } catch (error) {
+      toast({
+        title: "Something went error",
+        variant: "destructive"
+      })
+    }
     
   }
 
@@ -173,6 +184,9 @@ export default function CompanyForm(props: CompanyFormProps) {
             )}
             />
         </div>
+        <Button type="submit">
+          Edit Company
+        </Button>
       </form>
     </Form>
   )

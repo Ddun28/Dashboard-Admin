@@ -3,6 +3,7 @@ import { auth } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 import Header from "./components/Header/Header"
 import CompanyInformation from "./components/CompanyInformation/CompanyInformation"
+import FooterCompany from "./components/FooterCompany/FooterCompany"
 
 export default async function CompanyIdPage({params}: {params: {companyId: string}}) {
     const { userId }: { userId: string | null } = await auth()
@@ -26,7 +27,7 @@ export default async function CompanyIdPage({params}: {params: {companyId: strin
     <div>
       <Header/>
       <CompanyInformation company={company} />
-      <p>Footer company</p>
+      <FooterCompany companyId={company.id}/>
     </div>
   )
 }
