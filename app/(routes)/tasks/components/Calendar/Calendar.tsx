@@ -40,8 +40,9 @@ export default function Calendar(props : CalendarProps) {
             `Desea elimnar este evento ${selected.event.title}`
         )) {
             try {
-                axios.delete(`/api/event/${selected.event_def.publicId}`)
-                toast({title: "Event deleted"})                
+                await axios.delete(`/api/event/${selected.event._def.publicId}`)
+                toast({title: "Event deleted"})       
+                router.refresh()         
             } catch (error) {
                 toast({
                     title: "Something went wrong",
@@ -88,7 +89,7 @@ export default function Calendar(props : CalendarProps) {
             });
             setOnSaveNewEvent(false);
         }
-    }, [onSaveNewEvent, selectedItem, event]);
+    }, [onSaveNewEvent, selectedItem, events]);
 
   return (
     <div>
