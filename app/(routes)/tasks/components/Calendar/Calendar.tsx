@@ -89,7 +89,7 @@ export default function Calendar(props : CalendarProps) {
             });
             setOnSaveNewEvent(false);
         }
-    }, [onSaveNewEvent, selectedItem, events]);
+    }, [onSaveNewEvent, selectedItem, event]);
 
   return (
     <div>
