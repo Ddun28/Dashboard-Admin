@@ -33,22 +33,26 @@ cd dashboard-companies
 
 ## Instala las dependencias
 
+```bash
 npm install
-# or
+
 yarn install
-# or
+
 pnpm install
-# or
+
 bun install
+```
 
 ## Levantar proyecto en Local
 
+```bash
 npm run dev
-# or
+
 yarn dev
-# or
+
 pnpm dev
-# or
+
 bun dev
+```
 
 Abre http://localhost:3000 en tu navegador 
